@@ -1,6 +1,6 @@
 import AbstractView from '../framework/view/abstract-view.js';
-import { COLORS } from '../const.js';
-import { humanizeTaskDueDate, isTaskRepeating } from '../utils/task.js';
+import {COLORS} from '../const.js';
+import {humanizeTaskDueDate, isTaskRepeating} from '../utils/task.js';
 
 const BLANK_TASK = {
   color: COLORS[0],
@@ -81,7 +81,7 @@ function createTaskEditColorsTemplate(currentColor) {
 }
 
 function createTaskEditTemplate(data) {
-  const { color, description, dueDate, repeating } = data;
+  const {color, description, dueDate, repeating} = data;
 
   const dateTemplate = createTaskEditDateTemplate(dueDate);
 
@@ -144,7 +144,7 @@ export default class TaskEditView extends AbstractView {
   #task = null;
   #handleFormSubmit = null;
 
-  constructor({ task = BLANK_TASK, onFormSubmit }) {
+  constructor({task = BLANK_TASK, onFormSubmit}) {
     super();
     this.#task = task;
     this.#handleFormSubmit = onFormSubmit;
@@ -159,6 +159,6 @@ export default class TaskEditView extends AbstractView {
 
   #formSubmitHandler = (evt) => {
     evt.preventDefault();
-    this.#handleFormSubmit();
+    this.#handleFormSubmit(this.#task);
   };
 }
