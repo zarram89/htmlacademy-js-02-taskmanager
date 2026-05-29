@@ -13,6 +13,7 @@ npm i eslint@8.38.0 -DE
 - dayjs@1.11.7
 - flatpickr@4.6.13
 - he@1.2.0
+- nanoid@4.0.2
 
 ## Зависимости для разработки (`devDependencies`)
 
